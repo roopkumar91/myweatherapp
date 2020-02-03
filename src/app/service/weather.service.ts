@@ -13,7 +13,6 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
 
   getForeCastData(param: string) {
-  	console.log(environment);
     return this.http.get(this.BASE_URL + `/forecast?q=${param}&appid=${this.APP_ID}`);
   }
 }

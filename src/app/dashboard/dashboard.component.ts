@@ -38,7 +38,6 @@ export class DashboardComponent implements OnInit {
         distinctUntilChanged()
       )
       .subscribe(value => {
-        console.log(value);
         let city = value ? value : '';
         this.getForeCastDetails(city);
       });
@@ -46,7 +45,6 @@ export class DashboardComponent implements OnInit {
 
   // Get the city name and process with the API to get the details
   getForeCastDetails(param) {
-    console.log(param);
     this.loaderService.isLoading.next(true);
     this.weatherService.getForeCastData(param).subscribe(
       res => {
