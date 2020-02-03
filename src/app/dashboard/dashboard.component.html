@@ -1,0 +1,55 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Weather App for Encore</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<!-- Weather Search Input -->
+<div class="search-container">
+  <mat-form-field>
+    <input matInput placeholder="Search City" [(ngModel)]="citySearchQueryString" (ngModelChange)="citySearchQuery.next($event)" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" class="green-bg" (click)="clearSearch()">{{ citySearchQueryString ? 'Clear' : 'Search' }}</button>
+</div>
+<h3 class="center-align" *ngIf="!foreCastData">{{ defaultMessage }}</h3>
+<!-- Weather details List -->
+<div class="ml-4" *ngIf="foreCastData">
+  <div>
+    <h2 class="center-align">
+      {{ cityData.name }}, {{ cityData.country }}
+      <mat-icon class="green-color">wb_sunny</mat-icon>
+    </h2>
+  </div>
+  <div class="list-container">
+    <mat-card class="p-0 mb-2 flex-row" *ngFor="let list of foreCastData">
+      <h2 class="self-align">{{ list.dt_txt | date: 'short' }}</h2>
+      <div>
+        <h3 class="center-align">Main Info <mat-icon class="green-color">info</mat-icon>
+        </h3>
+        <ul>
+          <li>Sea Level: {{ list.main.sea_level }}</li>
+          <li>Ground Level: {{ list.main.grnd_level }}</li>
+          <li>Pressure: {{ list.main.pressure }} &#8457;</li>
+          <li>Humidity: {{ list.main.humidity }}</li>
+          <li>Temperature: {{ list.main.temp }} &#8451;</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Weather <mat-icon class="green-color">wb_cloudy</mat-icon>
+        </h3>
+        <ul *ngFor="let weather of list.weather">
+          <li>Description: {{ weather.description }}</li>
+          <li>Condition: {{ weather.main }}</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Wind Info <mat-icon class="green-color">invert_colors</mat-icon>
+        </h3>
+        <ul>
+          <li>Speed: {{ list.wind.speed }}</li>
+          <li>Degree: {{ list.wind.deg }}</li>
+        </ul>
+      </div>
+      <button mat-raised-button class="primary" class="green-bg color-white" (click)="getMoreDetails()">View more</button>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.mat-toolbar.mat-primary {
+  background: #3fb543;
+  color: #fff;
+}
+
+.search-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+
+  .mat-form-field {
+    width: 30%
+  }
+
+  .mat-raised-button {
+    margin-left: 20px;
+    height: 38px;
+  }
+}
+
+.green-bg {
+  background: #3fb543;
+}
+
+.green-color {
+  color: #3fb543;
+}
+
+.color-white {
+  color: #ffffff;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.list-container {
+  margin: 40px;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.ml-4 {
+  margin-left: 40px;
+}
+
+.green-bg {
+  background: #3fb543;
+}
