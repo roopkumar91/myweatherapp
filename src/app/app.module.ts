@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule} from '@angular/material';
+
+import {MatAutocompleteModule,MatInputModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material';
@@ -25,7 +27,9 @@ import { ModalComponent } from './shared/modal/modal.component';
     ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatAutocompleteModule,
+    MatInputModule
   ],
   entryComponents: [ModalComponent],
   providers: [ LoaderService ],

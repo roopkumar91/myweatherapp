@@ -9,10 +9,6 @@
   justify-content: center;
   margin-top: 15px;
 
-  .mat-form-field {
-    width: 30%
-  }
-
   .mat-raised-button {
     margin-left: 20px;
     height: 38px;
@@ -48,3 +44,21 @@
 .green-bg {
   background: #3fb543;
 }
+
+.tp-form {
+   min-width: 150px;
+   max-width: 500px;
+   width: 100%;
+}
+.tp-full-width {
+   width: 100%;
+}
+
+.autocomplete-field {
+  width: 20%;
+}
+
+.autocomplete-full-width {
+  width: 100%;
+}
+
