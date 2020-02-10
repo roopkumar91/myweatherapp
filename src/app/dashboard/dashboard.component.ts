@@ -100,9 +100,9 @@ export class DashboardComponent implements OnInit {
     this.selectedOption = '';
     this.cityName = '';
     this.citySearchQueryString = null;
-    // this.citySearchQuery.next();
-    // this.getForeCastDetails(city.name);
-    this.getForeCastDetails(this.cityName);
+    this.citySearchQuery.next();
+    this.searchFilters();
+    // this.getForeCastDetails(this.cityName);
   }
 
   // display the city list in auto complete

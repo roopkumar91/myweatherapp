@@ -7,7 +7,7 @@
 <div class="search-container">
 
 
-<form class="autocomplete-field">
+<!-- <form class="autocomplete-field">
   <mat-form-field class="autocomplete-full-width">
     <input type="text" placeholder="Search City" aria-label="Search City" matInput [(ngModel)]="selectedOption" [formControl]="myControl" [matAutocomplete]="auto">
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)='getCity($event.option.value)'>
@@ -16,17 +16,13 @@
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-</form>
+</form> -->
 
-<!-- <mat-form-field class="example-full-width">
-    <input matInput placeholder="Favorite food" value="Sushi">
-  </mat-form-field>
- -->
-
-  <!-- <mat-form-field>
+  <mat-form-field>
     <input matInput placeholder="Search City" [(ngModel)]="citySearchQueryString" (ngModelChange)="citySearchQuery.next($event)" />
   </mat-form-field>
- -->  <button mat-raised-button color="primary" class="green-bg" (click)="clearSearch()">{{ !!isClearlabel ? 'Clear' : 'Search' }}</button>
+  <!-- <button mat-raised-button color="primary" class="green-bg" (click)="clearSearch()">{{ !!isClearlabel ? 'Clear' : 'Search' }}</button> -->
+  <button mat-raised-button color="primary" class="green-bg" (click)="clearSearch()">{{ citySearchQueryString  ? 'Clear' : 'Search' }}</button>
 </div>
 <h3 class="center-align" *ngIf="!foreCastData">{{ defaultMessage }}</h3>
 <!-- Weather details List -->
